@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Aroma Catering – Authentic Nepali & Indian Food in Uusimaa</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Aroma Catering provides authentic Nepali and Indian catering from a licensed kitchen in Uusimaa – hot, fresh, and ready to serve for 20–100+ guests."
+  />
+
+  <style>
+    :root {
+      --saffron: #e56a1f;
+      --green: #1a6b43;
+      --cream: #fff7ef;
+      --text-dark: #222222;
+      --text-muted: #555555;
+      --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+      --radius-lg: 18px;
+      --radius-pill: 999px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Layout */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: rgba(255, 247, 239, 0.9);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .brand-text h1 {
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .brand-text span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.3rem 0.5rem;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      background: rgba(229, 106, 31, 0.08);
+      color: var(--saffron);
+    }
+
+    .nav-cta {
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-pill);
+      background: var(--green);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      background: #145335;
+      box-shadow: 0 8px 20px rgba(26, 107, 67, 0.4);
+    }
+
+    /* Hero */
+
+    main {
+      flex: 1;
+    }
+
+    .hero {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.2rem 3.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #ffffff;
+      border-radius: var(--radius-pill);
+      padding: 0.2rem 0.7rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 1rem;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--saffron);
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h2 span {
+      color: var(--saffron);
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      max-width: 32rem;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .chip {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-pill);
+      background: var(--saffron);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #c45818;
+      box-shadow: 0 10px 26px rgba(229, 106, 31, 0.4);
+    }
+
+    .btn-secondary {
+      border-radius: var(--radius-pill);
+      padding: 0.6rem 1.2rem;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      background: transparent;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+      transition: background 0.15s ease, border-color 0.15s ease;
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(0, 0, 0, 0.16);
+    }
+
+    .hero-right {
+      background: #ffffff;
+      padding: 1.4rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .hero-right h3 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-right p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.4rem;
+    }
+
+    .pill-list span {
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: var(--radius-pill);
+      background: rgba(26, 107, 67, 0.06);
+      color: var(--green);
+    }
+
+    .card-divider {
+      height: 1px;
+      background: rgba(0, 0, 0, 0.06);
+      margin: 0.5rem 0;
+    }
+
+    /* Sections */
+
+    section {
+      padding: 2.8rem 1.2rem;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 1.6rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-sub {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.2rem 1.1rem;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+    }
+
+    .card h4 {
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+
+    .card small {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .price-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.1rem;
+      text-align: left;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.9rem;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .price-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .price-main {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--saffron);
+      margin-bottom: 0.15rem;
+    }
+
+    .price-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .price-tagline {
+      font-size: 0.8rem;
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+    }
+
+    ul li + li {
+      margin-top: 0.35rem;
+    }
+
+    /* CTA section */
+
+    .cta {
+      text-align: center;
+      padding-bottom: 3.5rem;
+    }
+
+    .cta-box {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .cta-box p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .cta-note {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .contact-line {
+      font-size: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    .contact-line strong {
+      color: var(--green);
+    }
+
+    footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 1.2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 840px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 2rem;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .grid-3,
+      .price-grid,
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      section {
+        padding: 2.3rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <!-- Header -->
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <!-- Replace the src with the path to your logo file in the repo -->
+          <img
+            src="images/aroma-logo.png"
+            alt="Aroma Catering logo"
+            class="logo-img"
+          />
+          <div class="brand-text">
+            <h1>Aroma Catering</h1>
+            <span>Authentic Nepali &amp; Indian catering in Uusimaa</span>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#problem">Problem</a>
+          <a href="#solution">Solution</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#model">Business Model</a>
+        </div>
+        <button class="nav-cta" onclick="scrollToId('contact')">
+          Book a tasting
+        </button>
+      </nav>
+    </header>
